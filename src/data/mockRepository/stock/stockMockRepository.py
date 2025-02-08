@@ -1,5 +1,6 @@
 from ....domain.entities.stockEntity import Stock
 from .stockMockData import StockMockData
+from .stockMockSerializer import StockMockSerializer
 
 class StockMockRepository(object):
 
@@ -7,10 +8,8 @@ class StockMockRepository(object):
         try:
             stockData = StockMockData()
             stock = stockData.get()
-            return Stock(
-                last_updated= stock['last_updated'],
-                beers= stock['beers']
-            )
+
+            return StockMockSerializer.mapFrom(stock)
 
         except Exception as error:
             return { 'error': str(error) }
