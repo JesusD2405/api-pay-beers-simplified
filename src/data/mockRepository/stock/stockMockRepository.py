@@ -1,4 +1,3 @@
-from ....domain.entities.stockEntity import Stock
 from .stockMockData import StockMockData
 from .stockMockSerializer import StockMockSerializer
 
