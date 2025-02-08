@@ -22,7 +22,7 @@ class ViewWrapper(View):
 
         except Exception as error:
             body = { 'error': str(error) }
-            statusResponse = 500
+            statusResponse = status.HTTP_500_INTERNAL_SERVER_ERROR
         
         return HttpResponse(
             json.dumps(body),
