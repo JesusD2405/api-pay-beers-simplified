@@ -1,0 +1,13 @@
+###< Docker ###
+PROJECT_NAME=payBeersSimplified
+
+EXTERNAL_API_PORT=8000
+EXTERNAL_DEBUG_PORT=8200
+
+###> Django ###
+DEBUG=false # true ONLY DEV
+ALLOWED_HOSTS=127.0.0.1|localhost
+ENABLE_MIGRATIONS=false
+RUN_MODE=DEV # DEV | PROD
+GUNICORN_WORKERS=2 # REF: https://docs.gunicorn.org/en/latest/design.html#how-many-workers
+
