@@ -1,6 +1,6 @@
 # Pagar Cervezas Simplificado
 
-_Proyecto en Django Rest Framework, que contiene el desarrollo de una Api para la gestión pagos de cervezas._
+_Proyecto en Django Rest Framework, que contiene el desarrollo de una Api para la gestión pagos de cervezas. Implementación bajo Clean Architecture (Test Mode) personalizada.. Ref: [Clean Architecture in Django](https://medium.com/21buttons-tech/clean-architecture-in-django-d326a4ab86a9)_
 
 ## Comenzando 🚀
 
@@ -34,6 +34,24 @@ _Finalmente, en la raíz del proyecto ejecutamos_
 ```
 
 _De esta manera tendríamos todos nuestros conenedores levantados._
+
+## Probando Rutas 🧪
+
+_Para esta implementación solo se desarrollaron 2 rutas GET, las cuales son: ._
+
+1. Obtener Orden: GET `/api/v1/orders`.
+2. Obtener Stock: GET `/api/v1/stocks`.
+
+_¿Como probar los TESTS de la API?._
+_Actualmente, estos test se ejecutan automáticamente al iniciar el contenedor, pero en caso de ejecutar el test manualmente debemos ejecutar los siguentes comandos:_
+
+```
+ docker exec -it payBeersSimplified-api bash
+```
+_De esta manera entrariamos al contenedor de la api podriamos ejecutar el test con python de la siguiente manera:._
+```
+ ./manage.py test tests.stock.stockTest
+```
 
 ## Despliegue 📦
 
