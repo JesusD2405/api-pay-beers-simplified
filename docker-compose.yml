@@ -1,0 +1,13 @@
+services:
+  api:
+    container_name: ${PROJECT_NAME}-api
+    build: ./
+    restart: "unless-stopped"
+    entrypoint: ./docker/entrypoint.sh
+    env_file:
+      - docker-env.local
+    volumes:
+      - ./:/appdata/wwwroot
+    ports:
+      - ${EXTERNAL_API_PORT}:8000
+      - ${EXTERNAL_DEBUG_PORT}:8002

@@ -292,8 +292,6 @@ static/*
 
 
 ## Docker
-docker-compose.yml
-!docker-compose.yml.dist
 docker-env.*
 !docker-env.dist
 
