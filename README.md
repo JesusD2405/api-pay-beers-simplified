@@ -48,7 +48,7 @@ _Actualmente, estos test se ejecutan automáticamente al iniciar el contenedor, 
 ```
  docker exec -it payBeersSimplified-api bash
 ```
-_De esta manera entrariamos al contenedor de la api podriamos ejecutar el test con python de la siguiente manera:._
+_De esta manera entrariamos al contenedor de la api y podriamos ejecutar el test con python de la siguiente manera:._
 ```
  ./manage.py test tests.stock.stockTest
 ```
