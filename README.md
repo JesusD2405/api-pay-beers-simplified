@@ -55,7 +55,7 @@ _De esta manera entrariamos al contenedor de la api y podriamos ejecutar el test
 
 ## Despliegue 📦
 
-_Nos situamos en el directorio "./docker" y hacemos una copia del archivo docker-env.dist reemplazando la extensión del archivo por el nombre del ambiente a desplegar:_
+_Nos situamos en el directorio raiz y hacemos una copia del archivo docker-env.dist reemplazando la extensión del archivo por el nombre del ambiente a desplegar:_
 
 1. dev (Desarrollo).
 2. prod (Producción).
