@@ -1,8 +1,10 @@
-import json
 
 from django.http import HttpResponse
 from django.views import View
 from rest_framework import status
+
+import json
+from dataclasses import asdict
 
 
 class ViewWrapper(View):
@@ -13,7 +15,6 @@ class ViewWrapper(View):
         try:
             if request.method == 'GET':
                 body, statusResponse = self.view_factory.get().get(**kwargs)
-            
             else:
                 body = {
                     'message': 'METHOD NOT ALLOWED'
@@ -25,7 +26,7 @@ class ViewWrapper(View):
             statusResponse = status.HTTP_500_INTERNAL_SERVER_ERROR
         
         return HttpResponse(
-            json.dumps(body),
+            json.dumps(asdict(body)),
             status=statusResponse,
             content_type='application/json'
         )
