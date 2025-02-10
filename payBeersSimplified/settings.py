@@ -28,25 +28,33 @@ SECRET_KEY = 'django-insecure-7bmgory%!p#vdy+e#fyh@dzyu0ml900%9&)3(0%tht0!*ejl5r
 DEBUG = True if os.getenv('DEBUG') == "true" else False
 
 ALLOWED_HOSTS = list(os.getenv('ALLOWED_HOSTS').split('|'))
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
 
 
 # Application definition
 
-INSTALLED_APPS = [
+BASE_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
 ]
+
+THIRD_APPS = [
+    'rest_framework',
+    'corsheaders',
+]
+
+INSTALLED_APPS = BASE_APPS + THIRD_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
