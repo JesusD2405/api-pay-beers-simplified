@@ -1,6 +1,7 @@
 from ....domain.models.orderModel import OrderModel
 from ..item.itemMockSerializer import ItemMockSerializer
 from ..rounds.roundMockSerializer import RoundMockSerializer
+import json
 class OrderMockSerializer(object):
     
     @staticmethod
@@ -17,7 +18,7 @@ class OrderMockSerializer(object):
     
     @staticmethod
     def mapTo(order):
-        return {
+        return json.dumps({
             'created': order.created,
             'paid': order.paid,
             'subtotal': order.subtotal,
@@ -25,4 +26,4 @@ class OrderMockSerializer(object):
             'discounts': order.discounts,
             'items': order.items,
             'rounds': order.rounds
-        }
+        })

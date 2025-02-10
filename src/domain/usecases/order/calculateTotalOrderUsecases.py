@@ -1,6 +1,5 @@
 from ..stock.factory import StockInteractorFactory
 from ....domain.models.orderModel import ItemOrderModel
-from functools import reduce
 
 class CalculateTotalOrderUsecases(object):
 

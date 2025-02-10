@@ -1,15 +1,14 @@
 
 from ....domain.models.stockModel import StockModel
 from ..product.productMockSerializer import ProductMockSerializer
+import json
 class StockMockSerializer(object):
     
     @staticmethod
     def mapFrom(stock):
-        _beers = list(map(lambda beer: ProductMockSerializer.mapFrom(beer), stock['beers']))
-
         return StockModel(
             last_updated= stock['last_updated'],
-            beers= _beers
+            beers= list(map(lambda beer: ProductMockSerializer.mapFrom(beer), stock['beers']))
         ) 
 
     
@@ -17,7 +16,7 @@ class StockMockSerializer(object):
     def mapTo(stock):
         _beers = list(map(lambda beer: ProductMockSerializer.mapTo(beer), stock.beers))
 
-        return {
+        return json.dumps({
             "last_updated": stock.last_updated,
             "beers": _beers
-        }
+        })

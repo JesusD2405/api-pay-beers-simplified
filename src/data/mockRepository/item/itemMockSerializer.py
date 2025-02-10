@@ -1,6 +1,6 @@
 
-import json
 from ....domain.models.orderModel import ItemOrderModel
+import json
 
 class ItemMockSerializer(object):
     
